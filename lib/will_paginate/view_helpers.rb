@@ -317,7 +317,7 @@ module WillPaginate
       unless @url_string and !page_one
         @url_params = {}
         # page links should preserve GET parameters
-        stringified_merge @url_params, @template.params if @template.request.get?
+        stringified_merge @url_params, @template.request.query_parameters if @template.request.get?
         stringified_merge @url_params, @options[:params] if @options[:params]
         
         if complex = param_name.index(/[^\w-]/)

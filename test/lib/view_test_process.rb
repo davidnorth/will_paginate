@@ -138,6 +138,11 @@ class DummyRequest
     @params.update(more) if more
     @params
   end
+
+  def query_parameters
+    params
+  end
+
 end
 
 class DummyController
